@@ -14,6 +14,7 @@
         android:layout_marginTop="50dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
+        android:id="@+id/message"
         android:text="Un petit pas pour l’homme, un grand pas pour
 ma compréhension d’Android"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,29 +24,29 @@ ma compréhension d’Android"
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button1"
+        android:id="@+id/texte1"
         android:text="@string/premierBouton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/button2"
+        app:layout_constraintEnd_toStartOf="@id/texte2"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button2"
+        android:id="@+id/texte2"
         android:text="@string/deuxiemeBouton"
-        app:layout_constraintStart_toEndOf="@id/button1"
+        app:layout_constraintStart_toEndOf="@id/texte1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/button3"
+        app:layout_constraintEnd_toStartOf="@id/texte3"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button3"
+        android:id="@+id/texte3"
         android:text="@string/troisiemeBouton"
-        app:layout_constraintStart_toEndOf="@id/button2"
+        app:layout_constraintStart_toEndOf="@id/texte2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -59,7 +60,7 @@ ma compréhension d’Android"
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button3"
+        app:layout_constraintTop_toBottomOf="@id/texte3"
         app:layout_constraintEnd_toEndOf="parent"
         />
 

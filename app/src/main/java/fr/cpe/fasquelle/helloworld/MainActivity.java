@@ -1,5 +1,6 @@
 package fr.cpe.fasquelle.helloworld;
 
+import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -17,7 +18,9 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
 
     Button bouton;
-    TextView display;
+    TextView display1;
+    TextView display2;
+    TextView display3;
 
     String displayText;
 
@@ -29,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        //mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         setContentView(R.layout.activity_main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -37,10 +40,13 @@ public class MainActivity extends AppCompatActivity {
             //displayText = display.getText().toString();
             setContentView(R.layout.activity_main);
             bouton = findViewById(R.id.bouton);
-            display = findViewById(R.id.button2);
+            display1 = findViewById(R.id.texte1);
+            display2 = findViewById(R.id.texte2);
+            display3 = findViewById(R.id.texte3);
+
 
             bouton.setOnClickListener(
-                    view -> display.setText("Alors? c’est pas beau ça? :D")
+                    view -> display2.setText("Alors? c’est pas beau ça? :D")
             );
             return insets;
         });
