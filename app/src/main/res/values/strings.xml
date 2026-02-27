@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Toms App</string>
+    <string name="premierBouton">Premier</string>
+    <string name="deuxiemeBouton">Deuxième</string>
+    <string name="troisiemeBouton">Troisième</string>
+    <string name="bouton">Ceci est un bouton</string>
+</resources>
