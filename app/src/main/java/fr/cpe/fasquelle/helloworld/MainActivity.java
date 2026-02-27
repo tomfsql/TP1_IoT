@@ -21,11 +21,12 @@ public class MainActivity extends AppCompatActivity {
 
     Button bouton;
     TextView display;
-    //String displayText;
 
-    //SensorManager mSensorManager;
+    String displayText;
 
-    //private SensorEventListener listener;
+    SensorManager mSensorManager;
+
+    private SensorEventListener listener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
