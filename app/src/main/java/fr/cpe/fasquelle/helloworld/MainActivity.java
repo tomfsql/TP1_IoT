@@ -1,8 +1,5 @@
 package fr.cpe.fasquelle.helloworld;
 
-import static androidx.core.content.ContextCompat.getSystemService;
-
-import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -47,31 +44,28 @@ public class MainActivity extends AppCompatActivity {
             );
             return insets;
         });
+        listener = new SensorEventListener() {
+            @Override
+            public void onSensorChanged(SensorEvent sensorEvent) {
+                float light = sensorEvent.values[0];
+            }
+            @Override
+            public void onAccuracyChanged(Sensor sensor, int i) {}
+        };
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SensorManager manager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        Sensor sensor = manager.getDefaultSensor(Sensor.TYPE_LIGHT);
+        if (sensor != null) {
+            manager.registerListener(listener, sensor, SensorManager.SENSOR_DELAY_NORMAL);
+        }
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        SensorManager manager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        manager.unregisterListener(listener);
     }
 }
-
-//        listener = new SensorEventListener() {
-//            @Override
-//            public void onSensorChanged(SensorEvent sensorEvent) {
-//                float light = sensorEvent.values[0];
-//            }
-//            @Override
-//            public void onAccuracyChanged(Sensor sensor, int i) {}
-//        };
-//    }
-
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        SensorManager manager = (SensorManager) getSystemService(SENSOR_SERVICE);
-//        Sensor sensor = manager.getDefaultSensor(Sensor.TYPE_LIGHT);
-//        if (sensor != null) {
-//            manager.registerListener(listener, sensor, SensorManager.SENSOR_DELAY_NORMAL);
-//        }
-//    }
-//    @Override
-//    protected void onPause() {
-//        super.onPause();
-//        SensorManager manager = (SensorManager) getSystemService(SENSOR_SERVICE);
-//        manager.unregisterListener(listener);
-//    }
