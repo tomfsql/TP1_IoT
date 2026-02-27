@@ -43,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
             display1 = findViewById(R.id.texte1);
             display2 = findViewById(R.id.texte2);
             display3 = findViewById(R.id.texte3);
-
-
             bouton.setOnClickListener(
                     view -> display2.setText("Alors? c’est pas beau ça? :D")
             );

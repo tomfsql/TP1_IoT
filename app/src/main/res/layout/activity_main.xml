@@ -15,8 +15,7 @@
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:id="@+id/message"
-        android:text="Un petit pas pour l’homme, un grand pas pour
-ma compréhension d’Android"
+        android:text="@string/message"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
