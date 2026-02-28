@@ -12,22 +12,26 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:id="@+id/message"
         android:text="@string/message"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/texte1"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/texte1"
+        android:layout_marginTop="50dp"
         android:text="@string/premierBouton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/texte2"
+        app:layout_constraintBottom_toTopOf="@id/texte2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -35,9 +39,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/texte2"
         android:text="@string/deuxiemeBouton"
-        app:layout_constraintStart_toEndOf="@id/texte1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/texte3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bouton"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -45,10 +49,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/texte3"
         android:text="@string/troisiemeBouton"
-        app:layout_constraintStart_toEndOf="@id/texte2"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/bouton" />
 
     <Button
         android:layout_width="wrap_content"
@@ -56,10 +60,10 @@
         android:gravity="center"
         android:id="@+id/bouton"
         android:text="@string/bouton"
-        android:layout_marginTop="10dp"
         android:layout_gravity="center"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/texte3"
+        app:layout_constraintTop_toBottomOf="@id/texte2"
+        app:layout_constraintBottom_toTopOf="@id/texte3"
         app:layout_constraintEnd_toEndOf="parent"
         />
 
