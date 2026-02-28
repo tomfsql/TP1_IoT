@@ -21,9 +21,6 @@ public class MainActivity extends AppCompatActivity {
     TextView display1;
     TextView display2;
     TextView display3;
-
-    String displayText;
-
     SensorManager mSensorManager;
 
     private SensorEventListener listener;
@@ -37,15 +34,23 @@ public class MainActivity extends AppCompatActivity {
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            //displayText = display.getText().toString();
             setContentView(R.layout.activity_main);
             bouton = findViewById(R.id.bouton);
             display1 = findViewById(R.id.texte1);
             display2 = findViewById(R.id.texte2);
             display3 = findViewById(R.id.texte3);
-            bouton.setOnClickListener(
-                    view -> display2.setText("Alors? c’est pas beau ça? :D")
-            );
+            String defaultText = getString(R.string.deuxiemeBouton);
+            String successText = getString(R.string.success);
+            bouton.setOnClickListener(view -> {
+                String currentText = display2.getText().toString();
+                boolean hasDefaultText = currentText.contains(defaultText);
+                if (hasDefaultText) {
+                    display2.setText(successText);
+                }
+                else{
+                    display2.setText(defaultText);
+                }
+            });
             return insets;
         });
         listener = new SensorEventListener() {

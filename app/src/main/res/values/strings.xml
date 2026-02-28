@@ -5,4 +5,5 @@
     <string name="troisiemeBouton">Troisième</string>
     <string name="bouton">Ceci est un bouton</string>
     <string name="message">Un petit pas pour l’homme, un grand pas pour ma compréhension d’Android</string>
+    <string name="success">Alors? C’est pas beau ça? :D</string>
 </resources>
