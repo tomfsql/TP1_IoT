@@ -31,14 +31,13 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         setContentView(R.layout.activity_main);
+        bouton = findViewById(R.id.bouton);
+        display1 = findViewById(R.id.texte1);
+        display2 = findViewById(R.id.texte2);
+        display3 = findViewById(R.id.texte3);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            setContentView(R.layout.activity_main);
-            bouton = findViewById(R.id.bouton);
-            display1 = findViewById(R.id.texte1);
-            display2 = findViewById(R.id.texte2);
-            display3 = findViewById(R.id.texte3);
             String defaultText = getString(R.string.deuxiemeBouton);
             String successText = getString(R.string.success);
             bouton.setOnClickListener(view -> {
@@ -57,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSensorChanged(SensorEvent sensorEvent) {
                 float light = sensorEvent.values[0];
+                String lightDisplay = "Luminosité " + Float.toString(light);
+                display1.setText(lightDisplay);
             }
             @Override
             public void onAccuracyChanged(Sensor sensor, int i) {}
